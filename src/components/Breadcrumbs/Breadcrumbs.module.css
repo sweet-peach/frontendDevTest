@@ -1,0 +1,11 @@
+.breadcrumbsBox{
+    background: var(--middleground-color);
+    padding: var(--space-small);
+    display: flex;
+    gap: var(--space-tiny);
+}
+
+.breadcrumbsItem{
+    gap: var(--space-tiny);
+    display: flex;
+}

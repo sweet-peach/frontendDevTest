@@ -1,21 +1,61 @@
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    line-height: 1.5;
+    font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+    /* Colors */
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    --background-color: #000000;
+    --middleground-color: #EBEBEB;
+    --foreground-color: #FFFFFF;
+
+    --text-color: #000;
+    --text-color-invert: #fff;
+    --text-accent-color: #777777;
+
+    /* Typography */
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+
+    /* base values */
+    --text-base-size: 1em;
+    --text-scale-ratio: 1.2;
+
+    /* type scale */
+    --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+    --text-sm: calc(1em / var(--text-scale-ratio));
+    --text-md: calc(1em * var(--text-scale-ratio));
+    --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+
+    --baseline: 24px;
+
+    /* spacing values */
+    --space-tiny: calc(var(--baseline) / 4.8);
+    --space-extra-small: calc(var(--baseline) / 2.4);
+    --space-small: calc(var(--baseline) / 1.6);
+    --space-medium: var(--baseline);
+    --space-lg: calc(var(--baseline) * 2);
+    --space-xl: calc(var(--baseline) * 3);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    font-size: var(--text-base-size);
 }

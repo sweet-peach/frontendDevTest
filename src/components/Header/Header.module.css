@@ -1,0 +1,10 @@
+.headerBox{
+    padding: var(--space-small);
+    background: var(--foreground-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.brandBox{}
+
+.cartBox{}
