@@ -4,6 +4,7 @@ import {useBreadcrumbStore} from "../../stores/breadcrumbStore.js";
 import ProductService from "../../services/productService.js";
 import styles from "./ProductDetailsPage.module.css";
 import Image from "./Image/Image.jsx"
+import Description from "./Description/Description.jsx";
 
 export function ProductDetailsPage(){
     const {id} = useParams();
@@ -48,6 +49,7 @@ export function ProductDetailsPage(){
 
     return <div className={styles.productDetailsBox}>
         <Image src={product.imgUrl}></Image>
+        <Description product={product}></Description>
     </div>
 
 }
