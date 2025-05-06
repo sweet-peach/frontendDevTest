@@ -2,13 +2,15 @@ import {useParams, useSearchParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {useBreadcrumbStore} from "../../stores/breadcrumbStore.js";
 import ProductService from "../../services/productService.js";
+import styles from "./ProductDetailsPage.module.css";
+import Image from "./Image/Image.jsx"
 
 export function ProductDetailsPage(){
     const {id} = useParams();
     const {setBreadcrumb} = useBreadcrumbStore();
     const [searchParams] = useSearchParams();
     const [product, setProduct] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     async function getProduct(){
         try {
@@ -44,5 +46,8 @@ export function ProductDetailsPage(){
         return <>Loading</>
     }
 
-    return <pre style={{color:"#fff"}}>{JSON.stringify(product, null, 2)}</pre>
+    return <div className={styles.productDetailsBox}>
+        <Image src={product.imgUrl}></Image>
+    </div>
+
 }
