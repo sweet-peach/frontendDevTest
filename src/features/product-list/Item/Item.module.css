@@ -1,0 +1,26 @@
+.productBox{
+    width: 100%;
+    padding: var(--space-small);
+}
+.imageBox{
+    display: flex;
+    justify-content: center;
+}
+.productDescriptionBox{
+    padding: var(--space-small);
+    background: var(--foreground-color);
+}
+
+.brandText{
+    font-size: var(--text-sm);
+}
+.priceBox{
+    display: flex;
+}
+.currencyText{
+    font-size: var(--text-sm);
+}
+.priceText{
+    font-size: var(--text-lg);
+    font-weight: 500;
+}

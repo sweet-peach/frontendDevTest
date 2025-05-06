@@ -1,7 +1,8 @@
 import {useBreadcrumbStore} from "../../stores/breadcrumbStore.js";
 import {useEffect, useState} from "react";
 import ProductService from "../../services/productService.js";
-import {Link} from "react-router-dom";
+import Item from "./Item/Item.jsx";
+import styles from "./ProductsListPage.module.css";
 
 export function ProductListPage() {
     const {setBreadcrumb} = useBreadcrumbStore();
@@ -31,12 +32,9 @@ export function ProductListPage() {
         return <>Loading</>
     }
 
-    return <div>
-        {products.map((product)=>{
-            return <Link to={`product/${product.id}?brand=${encodeURIComponent(product.brand)}&model=${encodeURIComponent(product.model)}`}
-                         style={{color: "#fff"}}>
-                {product.brand} {product.model}
-            </Link>
+    return <div className={styles.productsBox}>
+        {products.map((product, index)=>{
+            return <Item key={index} product={product}></Item>
         })}
     </div>
 }
