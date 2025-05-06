@@ -39,8 +39,8 @@ export default function Actions({product}){
     return <div className={styles.actionsBox}>
         <div className={styles.radioButtonsBox}>
             <p>Select storage</p>
-            {product.options.storages.map((storage) => {
-                return <label>
+            {product.options.storages.map((storage, index) => {
+                return <label key={index}>
                     <input
                         type="radio"
                         name="storage"
@@ -52,8 +52,8 @@ export default function Actions({product}){
                 </label>
             })}
             <p>Select color</p>
-            {product.options.colors.map((colors) => {
-                return <label>
+            {product.options.colors.map((colors, index) => {
+                return <label key={index}>
                     <input
                         type="radio"
                         name="colors"
