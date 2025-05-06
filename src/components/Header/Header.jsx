@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {useCartStore} from "../../stores/cartStore.js";
 
 export default function Header() {
-    const {cart} = useCartStore();
+    const {cartItems} = useCartStore();
 
     return <div>
         <header className={styles.headerBox}>
@@ -12,7 +12,7 @@ export default function Header() {
                 <Link to="/">TIX</Link>
             </div>
             <div className={styles.cartBox}>
-                <p>{cart.length} items in cart</p>
+                <p>{cartItems} items in cart</p>
             </div>
         </header>
         <Breadcrumbs></Breadcrumbs>

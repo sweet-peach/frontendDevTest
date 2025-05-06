@@ -21,6 +21,8 @@
     --text-color-invert: #fff;
     --text-accent-color: #777777;
 
+    --error-color: #f5414f;
+
     /* Typography */
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 
@@ -58,4 +60,8 @@ body {
     background: var(--background-color);
     color: var(--text-color);
     font-size: var(--text-base-size);
+}
+
+.error{
+    color: var(--error-color);
 }
