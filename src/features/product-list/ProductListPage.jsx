@@ -33,7 +33,10 @@ export function ProductListPage() {
 
     return <div>
         {products.map((product)=>{
-            return <Link to={`/product/${product.id}`} style={{color: "#fff"}}>{product.brand} {product.model}</Link>
+            return <Link to={`product/${product.id}?brand=${encodeURIComponent(product.brand)}&model=${encodeURIComponent(product.model)}`}
+                         style={{color: "#fff"}}>
+                {product.brand} {product.model}
+            </Link>
         })}
     </div>
 }
