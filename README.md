@@ -2,7 +2,7 @@
 
 
 
-# Instalation
+# Installation
 
 ```bash
 git clone https://github.com/sweet-peach/frontendDevTest.git
