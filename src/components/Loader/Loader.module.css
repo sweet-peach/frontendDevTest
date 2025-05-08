@@ -1,0 +1,8 @@
+.loaderContainer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.loaderBox{
+    color: var(--text-color-invert);
+}

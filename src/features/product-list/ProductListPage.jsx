@@ -4,10 +4,11 @@ import ProductService from "../../services/productService.js";
 import Item from "./Item/Item.jsx";
 import styles from "./ProductsListPage.module.css";
 import Search from "./Search/Search.jsx";
+import Loader from "../../components/Loader/Loader.jsx";
 
 export function ProductListPage() {
     const {setBreadcrumb} = useBreadcrumbStore();
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
@@ -44,7 +45,7 @@ export function ProductListPage() {
     }, [])
 
     if (isLoading) {
-        return <>Loading</>
+        return <Loader></Loader>
     }
 
     return <div className={styles.listViewBox}>

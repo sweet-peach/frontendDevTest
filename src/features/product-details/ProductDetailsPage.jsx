@@ -6,6 +6,7 @@ import styles from "./ProductDetailsPage.module.css";
 import Image from "./Image/Image.jsx"
 import Description from "./Description/Description.jsx";
 import Actions from "./Actions/Actions.jsx";
+import Loader from "../../components/Loader/Loader.jsx";
 
 export function ProductDetailsPage(){
     const {id} = useParams();
@@ -19,7 +20,7 @@ export function ProductDetailsPage(){
             setIsLoading(true);
             setProduct(await ProductService.getProduct(id));
         } catch (e) {
-            alert(e);
+            alert(e.message);
         } finally {
             setIsLoading(false);
         }
@@ -45,7 +46,7 @@ export function ProductDetailsPage(){
     },[])
 
     if(isLoading){
-        return <>Loading</>
+        return <Loader></Loader>
     }
 
     return <div className={styles.productDetailsBox}>
